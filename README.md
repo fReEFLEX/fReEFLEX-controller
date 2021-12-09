@@ -50,7 +50,7 @@ Mice that are known work:
 ![](doc/schematic.png?raw=true "Breadboard")
 
 ## Firmware installation
-1. Hold down the **BOOTSEL** button when you plug in your Pico to you.
+1. Hold down the **BOOTSEL** button when you plug in your Pico to your PC.
     >This puts your Pico into Bootsel mode and it appears as a mass storage device on your PC.
 2. Copy the [latest firmare](https://github.com/fReEFLEX/fReEFLEX-controller/releases) (.uf2) onto your Pico.
 3. The Pico automatically reboots and is ready to be used with the [GUI](https://freeflex.github.io/fReEFLEX-GUI/)
