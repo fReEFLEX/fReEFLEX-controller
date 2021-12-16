@@ -605,24 +605,25 @@ void detect_light_frequency(const uint32_t &now, const uint32_t &adc_light_value
       if (adc_light_value > high) high = adc_light_value;
       if (high / low >= 2 && now - start >= 1000000) {
         start = now;
-        is_high = (float)adc_light_value / high > 0.75;
+        high -= (high-low)/4;
+        low += (high-low)/4;
+        is_high = (float)adc_light_value >= high;
         state = 1;
       }
       break;
     case 1:
-      if ((float)adc_light_value / high > 0.75) {
+      if ((float)adc_light_value >= high) {
         if (!is_high) {
           count_high++;
           is_high = true;
         }
-      } else if (is_high && (float)adc_light_value / high < 0.5) {
+      } else if (is_high && (float)adc_light_value <= low) {
         is_high = false;
       }
       if (now - start >= 1000000) {
         globals.setEvent(floor((float)count_high * 1000000 / (now - start)));
         low = 9999;
         high = 0;
-        is_high = false;
         count_high = 0;
         start = now;
         state = 0;
