@@ -1,7 +1,7 @@
 # fReEFLEX Controller
 [![License: Apache License 2.0](https://img.shields.io/badge/License-Apache%20License%202.0-yellow.svg)](LICENSE)
 
-> fReEFLEX controller firmware.
+> How to build a fReEFLEX controller and install the firmware. Costs of materials are 10 to 15 USD.
 
 ![](doc/breadboard.png?raw=true "Breadboard")
 
@@ -10,7 +10,7 @@
 
 ## Contents
 - [Download](#-download)
-- [What is this?](#what-is-freeflex)
+- [What is fReEFLEX?](#what-is-freeflex)
 - [Required hardware](#required-hardware)
 - [Build it](#build-it)
 - [Installation](#firmware-installation)
@@ -30,22 +30,23 @@ The fReEFLEX project includes
 - [3D Application](https://github.com/fReEFLEX/fReEFLEX-clicker/) - 3D application for E2E latency measurement 
 
 ## Required hardware
->If you don't want to solder anything make sure to get a Pico with **pre soldered headers**, a **Breadboard** and some **Jumper Wires**.
+>⚠ If you don't want to solder anything make sure to get a Pico with **pre soldered headers**, a **Breadboard** and some **Jumper Wires**.
 
 A fReEFLEX controller can be built in three steps, each extending its capabilities:
 1. [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) - Measure [System Latency](https://github.com/fReEFLEX/fReEFLEX-GUI/#5-system-latency-mode)
 2. OPT101 light sensor (often as CJMCU-101) - Measure [E2E Latency](https://github.com/fReEFLEX/fReEFLEX-GUI/#4-e2e-latency-mode) and [Light frequency](https://github.com/fReEFLEX/fReEFLEX-GUI/#6-light-frequency)
 3. a spare mouse - Measure [Mouse latency](https://github.com/fReEFLEX/fReEFLEX-GUI/#51-mouse-latency)
 
->Measuring with a real mouse is by far the most advanced step but only needed if you want to measure the latency of a specific mouse.
-The mouse needs to have the left mouse button pulled to ground when pushed. Otherwise, it currently is not compatible with a fReEFLEX Controller.
+>Measuring with a real mouse is by far the most advanced step and requires soldering. This is only needed if you want to measure the latency of a specific mouse.
+
+The mouse needs to have the left mouse button pulled to ground when pushed, otherwise it currently is not compatible with the fReEFLEX Controller.
 
 Mice that are known work:
 - Logitech G203
 
 
 ## Build it
-⚠️If you are building the Controller on a Breadboard check above image. 
+⚠ ️If you are building the Controller on a Breadboard check above image. 
 
 ![](doc/schematic.png?raw=true "Breadboard")
 
